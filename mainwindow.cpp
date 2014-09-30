@@ -12,3 +12,9 @@ MainWindow::~MainWindow()
 {
 	delete ui;
 }
+
+void MainWindow::on_inputSelectButton_clicked()
+{
+	QString selectedFile = QFileDialog::getOpenFileName(this, tr("Select File"), "/", tr("Image Files (*)"));
+	ui->inputPath->setText(selectedFile);
+}
