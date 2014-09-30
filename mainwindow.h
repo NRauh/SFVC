@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include "ffmpegwrapper.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,8 +19,13 @@ public:
 private slots:
 	void on_inputSelectButton_clicked();
 
+	void on_outPathButton_clicked();
+
+	void on_comboBox_currentIndexChanged(const QString &arg1);
+
 private:
 	Ui::MainWindow *ui;
+	FFMpegWrapper *wrapper;
 };
 
 #endif // MAINWINDOW_H
