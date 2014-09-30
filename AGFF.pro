@@ -20,3 +20,5 @@ HEADERS  += mainwindow.h \
     ffmpegwrapper.h
 
 FORMS    += mainwindow.ui
+
+OTHER_FILES +=

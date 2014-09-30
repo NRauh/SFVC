@@ -2,20 +2,19 @@
 #define FFMPEGWRAPPER_H
 
 #include <QString>
+#include <QDir>
 
 class FFMpegWrapper
 {
 public:
 	FFMpegWrapper();
 
-	void setInputPath(QString *newPath);
-	void setOutputPath(QString *newOutPath);
-	void setFileType(QString *newFiletype);
+	void runConverter();
 
-private:
-	QString *inputPath;
-	QString *outputPath;
-	QString *filetype;
+	QString inputPath;
+	QString outputPath;
+	QString fileType;
+	QString fileName;
 };
 
 #endif // FFMPEGWRAPPER_H
