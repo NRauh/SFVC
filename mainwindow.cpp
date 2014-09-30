@@ -1,20 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-	QMainWindow(parent),
-	ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
 	delete ui;
 }
 
-void MainWindow::on_inputSelectButton_clicked()
-{
+void MainWindow::on_inputSelectButton_clicked() {
 	QString selectedFile = QFileDialog::getOpenFileName(this, tr("Select File"), "/", tr("Image Files (*)"));
 	ui->inputPath->setText(selectedFile);
 }
