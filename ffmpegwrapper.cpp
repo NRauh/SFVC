@@ -1,4 +1,6 @@
 #include "ffmpegwrapper.h"
+#include <stdio.h>
+#include <QDebug>
 
 FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 	inputPath = "";
@@ -11,6 +13,17 @@ void FFMpegWrapper::run() {
 	QString command;
 	command = QString("./ffmpeg -i %1 %2/%3.%4").arg(inputPath, outputPath, fileName, fileType);
 
-	system(command.toStdString().c_str());
-	//system("sleep 10 && echo Done");
+
+	FILE *executedCommand;
+	char lineOutput[2048];
+
+	//executedCommand = popen(command.toStdString().c_str(), "r");
+	executedCommand = popen("sleep 8 && echo done", "r");
+
+
+	while (fgets(lineOutput, sizeof(path)-1, executedCommand)) {
+		qDebug() << lineOutput;
+	}
+
+	pclose(executedCommand);
 }
