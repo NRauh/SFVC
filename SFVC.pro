@@ -13,11 +13,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
 		mainwindow.cpp \
-	ffmpegwrapper.cpp
+	ffmpegwrapper.cpp \
+    commandoutputwindow.cpp
 
 HEADERS  += mainwindow.h \
-	ffmpegwrapper.h
+	ffmpegwrapper.h \
+    commandoutputwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    commandoutputwindow.ui
 
 OTHER_FILES +=

@@ -17,7 +17,7 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 
 
 
-/***
+/*** editing
  * run is an override function that gets exicuted with FFMpegWrapper::start()
  * First a QString variable called command is created, which is set to
  * the command that will be exicuted in a formatted way. The variables are passed
@@ -35,18 +35,22 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 ***/
 void FFMpegWrapper::run() {
 	QString command;
-	command = QString("./ffmpeg -i %1 %2/%3.%4").arg(inputPath, outputPath, fileName, fileType);
+	command = QString("./ffmpeg -i \"%1\" \"%2/%3.%4\"").arg(inputPath, outputPath, fileName, fileType);
 
+	outputWindow.show();
 
 	FILE *executedCommand;
 	char lineOutput[2048];
 
-	//executedCommand = popen(command.toStdString().c_str(), "r");
-	executedCommand = popen("sleep 8 && echo done", "r");
+	command.append(" 2>&1");
+	executedCommand = popen(command.toStdString().c_str(), "r");
+	//executedCommand = popen("./ffmpeg -h", "r");
+	//executedCommand = popen("echo start && sleep 8 && echo done", "r");
 
 
 	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand)) {
 		qDebug() << lineOutput;
+		outputWindow.addToOutput(lineOutput);
 	}
 
 	pclose(executedCommand);

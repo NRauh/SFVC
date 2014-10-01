@@ -15,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 /***
  * Descontructor for MainWindow
+ *
+ * TODO: Memory management, obviously
 ***/
 MainWindow::~MainWindow() {
 	delete ui;
@@ -25,11 +27,9 @@ MainWindow::~MainWindow() {
 /***
  * When the runCommand button is clicked, I'm running the start method for the wrapper.
  * start() creates a new thread and runs the wrapper's run command.
- *
- * TODO: Memory management, obviously
 ***/
 void MainWindow::on_runCommand_clicked() {
-	wrapper->start();
+	wrapper->start(QThread::HighestPriority);
 }
 
 
