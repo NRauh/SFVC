@@ -11,7 +11,7 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_runCommand_clicked() {
-	wrapper->runConverter();
+	wrapper->start();
 }
 
 void MainWindow::on_inputSelectButton_clicked() {

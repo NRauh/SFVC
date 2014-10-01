@@ -1,14 +1,17 @@
 #ifndef FFMPEGWRAPPER_H
 #define FFMPEGWRAPPER_H
 
+#include <QThread>
 #include <QString>
 #include <QDir>
 
-class FFMpegWrapper {
+class FFMpegWrapper : public QThread {
+	Q_OBJECT
 public:
-	FFMpegWrapper();
+	FFMpegWrapper(QObject *parent = 0);
 
-	void runConverter();
+	//void runConverter();
+	void run();
 
 	QString inputPath;
 	QString outputPath;
