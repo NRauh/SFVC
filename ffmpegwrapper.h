@@ -4,8 +4,7 @@
 #include <QString>
 #include <QDir>
 
-class FFMpegWrapper
-{
+class FFMpegWrapper {
 public:
 	FFMpegWrapper();
 

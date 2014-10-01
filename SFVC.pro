@@ -8,16 +8,16 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = AGFF
+TARGET = SFVC
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    ffmpegwrapper.cpp
+		mainwindow.cpp \
+	ffmpegwrapper.cpp
 
 HEADERS  += mainwindow.h \
-    ffmpegwrapper.h
+	ffmpegwrapper.h
 
 FORMS    += mainwindow.ui
 

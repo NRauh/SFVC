@@ -1,21 +1,16 @@
 #include "ffmpegwrapper.h"
 
 FFMpegWrapper::FFMpegWrapper() {
+	inputPath = "";
+	outputPath = "/";
+	fileName = "SFVC-Video";
+	fileType = "avi";
 }
 
 void FFMpegWrapper::runConverter() {
-	/*
-	QString *command = new QString("./ffmpeg -i \"");
-	command->append(inputPath);
-	command->append("\" \"");
+	QString command;
+	command = "./ffmpeg -i %1 %2/%3.%4";
+	command.arg(inputPath, outputPath, fileName, fileType);
 
-	command->append(outputPath);
-	command->append(fileName);
-	command->append(".");
-	command->append(fileType);
-	command->append("\"");
-	*/
-	QString command = QString("./ffmpeg -i %1 %2/%3.%4").arg(inputPath, outputPath, fileName, fileType);
-
-	//system(command->toStdString().c_str());
+	system(command.toStdString().c_str());
 }

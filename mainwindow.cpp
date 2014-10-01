@@ -4,7 +4,6 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	ui->setupUi(this);
 	wrapper = new FFMpegWrapper();
-	wrapper->fileType = "avi";
 }
 
 MainWindow::~MainWindow() {
