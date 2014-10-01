@@ -19,11 +19,8 @@ public:
 
 private slots:
 	void on_inputSelectButton_clicked();
-
 	void on_outPathButton_clicked();
-
 	void on_comboBox_currentIndexChanged(const QString &arg1);
-
 	void on_runCommand_clicked();
 
 private:

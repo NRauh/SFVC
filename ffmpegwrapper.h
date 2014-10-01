@@ -10,7 +10,6 @@ class FFMpegWrapper : public QThread {
 public:
 	FFMpegWrapper(QObject *parent = 0);
 
-	//void runConverter();
 	void run();
 
 	QString inputPath;
