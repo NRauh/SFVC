@@ -98,7 +98,7 @@
     <property name="title">
      <string>General Options</string>
     </property>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="formatSelection">
      <property name="geometry">
       <rect>
        <x>110</x>

@@ -41,8 +41,8 @@ void FFMpegWrapper::run() {
 	FILE *executedCommand;
 	char lineOutput[2048];
 
-	executedCommand = popen(command.toStdString().c_str(), "r");
-	//executedCommand = popen("sleep 8 && echo done", "r");
+	//executedCommand = popen(command.toStdString().c_str(), "r");
+	executedCommand = popen("sleep 8 && echo done", "r");
 
 
 	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand)) {

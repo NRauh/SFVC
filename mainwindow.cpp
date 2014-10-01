@@ -70,9 +70,7 @@ void MainWindow::on_outPathButton_clicked() {
 /***
  * When the combobox is changed, this function gives the text of the item.
  * Then wrapper.fileType is set to arg1 / selection.
- *
- * TODO: rename combobox in ui
 ***/
-void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1) {
+void MainWindow::on_formatSelection_currentIndexChanged(const QString &arg1) {
 	wrapper->fileType = arg1;
 }
