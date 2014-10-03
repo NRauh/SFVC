@@ -35,7 +35,10 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 ***/
 void FFMpegWrapper::run() {
 	QString command;
-	command = QString("./ffmpeg -i \"%1\" \"%2/%3.%4\"").arg(inputPath, outputPath, fileName, fileType);
+	command = QString("./ffmpeg");
+
+	command.append(QString(" -i \"%1\"").arg(inputPath));
+	command.append(QString(" \"%1/%2.%3\"").arg(outputPath, fileName, fileType));
 
 	outputWindow.show();
 
@@ -44,7 +47,6 @@ void FFMpegWrapper::run() {
 
 	command.append(" 2>&1");
 	executedCommand = popen(command.toStdString().c_str(), "r");
-	//executedCommand = popen("./ffmpeg -h", "r");
 	//executedCommand = popen("echo start && sleep 8 && echo done", "r");
 
 

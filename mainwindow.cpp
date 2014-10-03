@@ -38,7 +38,7 @@ void MainWindow::on_runCommand_clicked() {
  * When the inputSelectButton is clicked, first I'm creating a new QFileInfo object,
  * called fileInfo, which is given the file path via QFileDialog.
  * When fileInfo is created, the inputPath textfield is set to the file to be converted's path,
- * so people can see what the file is.
+ * and the file name without extension is being put in the file name input.
  *
  * Then I move on to set wrapper.inputPath to the selected file's path,
  * and wrapper.fileName to the selected files name without extension
@@ -46,6 +46,7 @@ void MainWindow::on_runCommand_clicked() {
 void MainWindow::on_inputSelectButton_clicked() {
 	QFileInfo *fileInfo = new QFileInfo(QFileDialog::getOpenFileName(this, tr("Select File"), "/", tr("Image Files (*)")));
 	ui->inputPath->setText(fileInfo->filePath());
+	ui->nameInput->setText(fileInfo->baseName());
 	wrapper->inputPath = fileInfo->filePath();
 	wrapper->fileName = fileInfo->baseName();
 }
@@ -63,6 +64,16 @@ void MainWindow::on_outPathButton_clicked() {
 	QString outputPath = QFileDialog::getExistingDirectory(this, tr("Select Destination"), "/");
 	ui->outPath->setText(outputPath);
 	wrapper->outputPath = outputPath;
+}
+
+
+
+/***
+ * When the text in the name input field is changed (person or computer),
+ * then the file name is changed for the wrapper.
+***/
+void MainWindow::on_nameInput_textChanged(const QString &arg1) {
+	wrapper->fileName = arg1;
 }
 
 

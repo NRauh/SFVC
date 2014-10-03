@@ -23,6 +23,8 @@ private slots:
 	void on_runCommand_clicked();
 	void on_formatSelection_currentIndexChanged(const QString &arg1);
 
+	void on_nameInput_textChanged(const QString &arg1);
+
 private:
 	Ui::MainWindow *ui;
 	FFMpegWrapper *wrapper;
