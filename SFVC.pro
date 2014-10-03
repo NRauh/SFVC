@@ -23,4 +23,6 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     commandoutputwindow.ui
 
-OTHER_FILES +=
+OTHER_FILES += \
+    LICENSE.md \
+    README.md
