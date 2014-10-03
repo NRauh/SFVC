@@ -4,6 +4,7 @@
 #include <QThread>
 #include <QString>
 #include <QDir>
+#include <QDebug>
 #include "commandoutputwindow.h"
 
 class FFMpegWrapper : public QThread {
