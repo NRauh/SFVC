@@ -25,6 +25,8 @@ private slots:
 
 	void on_nameInput_textChanged(const QString &arg1);
 
+	void on_qualitySelection_currentIndexChanged(int index);
+
 private:
 	Ui::MainWindow *ui;
 	FFMpegWrapper *wrapper;

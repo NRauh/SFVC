@@ -19,6 +19,7 @@ public:
 	QString outputPath;
 	QString fileType;
 	QString fileName;
+	int quality;
 };
 
 #endif // FFMPEGWRAPPER_H

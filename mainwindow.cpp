@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
 
 
 
@@ -84,4 +85,29 @@ void MainWindow::on_nameInput_textChanged(const QString &arg1) {
 ***/
 void MainWindow::on_formatSelection_currentIndexChanged(const QString &arg1) {
 	wrapper->fileType = arg1;
+}
+
+void MainWindow::on_qualitySelection_currentIndexChanged(int index) {
+	switch (index) {
+	case 0:
+		wrapper->quality = 1;
+		break;
+	case 1:
+		wrapper->quality = 7;
+		break;
+	case 2:
+		wrapper->quality = 13;
+		break;
+	case 3:
+		wrapper->quality = 19;
+		break;
+	case 4:
+		wrapper->quality = 25;
+		break;
+	case 5:
+		wrapper->quality = 31;
+		break;
+	default:
+		break;
+	}
 }

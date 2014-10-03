@@ -13,6 +13,7 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 	outputPath = "/";
 	fileName = "SFVC-Video";
 	fileType = "avi";
+	quality = 1;
 }
 
 
@@ -38,6 +39,7 @@ void FFMpegWrapper::run() {
 	command = QString("./ffmpeg");
 
 	command.append(QString(" -i \"%1\"").arg(inputPath));
+	command.append(QString(" -qscale %1").arg(quality));
 	command.append(QString(" \"%1/%2.%3\"").arg(outputPath, fileName, fileType));
 
 	outputWindow.show();
@@ -52,7 +54,7 @@ void FFMpegWrapper::run() {
 
 	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand)) {
 		qDebug() << lineOutput;
-		outputWindow.addToOutput(lineOutput);
+		//outputWindow.addToOutput(lineOutput);
 	}
 
 	pclose(executedCommand);
