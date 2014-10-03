@@ -1,6 +1,5 @@
 #include "ffmpegwrapper.h"
 #include <stdio.h>
-#include <QDebug>
 
 
 
