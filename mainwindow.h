@@ -21,10 +21,8 @@ private slots:
 	void on_inputSelectButton_clicked();
 	void on_outPathButton_clicked();
 	void on_runCommand_clicked();
-	void on_formatSelection_currentIndexChanged(const QString &arg1);
-
 	void on_nameInput_textChanged(const QString &arg1);
-
+	void on_formatSelection_currentIndexChanged(int index);
 	void on_qualitySelection_currentIndexChanged(int index);
 
 private:

@@ -80,12 +80,13 @@ void MainWindow::on_nameInput_textChanged(const QString &arg1) {
 
 
 
-/***
+
+/*** edited
  * When the combobox is changed, this function gives the text of the item.
  * Then wrapper.fileType is set to arg1 / selection.
 ***/
-void MainWindow::on_formatSelection_currentIndexChanged(const QString &arg1) {
-	wrapper->fileType = arg1;
+void MainWindow::on_formatSelection_currentIndexChanged(int index) {
+	wrapper->fileType = wrapper->formats[index];
 }
 
 void MainWindow::on_qualitySelection_currentIndexChanged(int index) {

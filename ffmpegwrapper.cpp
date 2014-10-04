@@ -13,6 +13,16 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 	fileName = "SFVC-Video";
 	fileType = "avi";
 	quality = 1;
+
+	formats[0] = "avi";
+	formats[1] = "flv";
+	formats[2] = "gif";
+	formats[3] = "mkv";
+	formats[4] = "mov";
+	formats[5] = "mp4";
+	formats[6] = "mpg";
+	formats[7] = "rm";
+	formats[8] = "wmv";
 }
 
 

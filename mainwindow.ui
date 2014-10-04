@@ -138,11 +138,6 @@
            </item>
            <item>
             <property name="text">
-             <string>drc - Dirac</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
              <string>flv - Flash Video</string>
             </property>
            </item>
@@ -173,17 +168,7 @@
            </item>
            <item>
             <property name="text">
-             <string>ogg - Ogg Video</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
              <string>rm - RealMedia</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>webm - WebM</string>
             </property>
            </item>
            <item>

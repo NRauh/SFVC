@@ -16,6 +16,8 @@ public:
 
 	CommandOutputWindow outputWindow;
 
+	QString formats[9];
+
 	QString inputPath;
 	QString outputPath;
 	QString fileType;
