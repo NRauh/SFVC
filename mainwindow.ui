@@ -14,213 +14,219 @@
    <string>SFVC</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="inputLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>122</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select Input Source</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="inputSelectButton">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>30</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select File</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="inputPath">
-    <property name="geometry">
-     <rect>
-      <x>22</x>
-      <y>30</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="outPath">
-    <property name="geometry">
-     <rect>
-      <x>22</x>
-      <y>90</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="outPathLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>161</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select Output Destination</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="outPathButton">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>90</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select Path</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>381</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>General Options</string>
-    </property>
-    <widget class="QComboBox" name="formatSelection">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>70</y>
-       <width>111</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>avi</string>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="inputGroup">
+      <item>
+       <widget class="QLabel" name="inputLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Select Input Source</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="inputLayout">
+        <item>
+         <widget class="QLineEdit" name="inputPath"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="inputSelectButton">
+          <property name="text">
+           <string>Select File</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="outputGroup">
+      <item>
+       <widget class="QLabel" name="outPathLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Select Output Destination</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="outputLayout">
+        <item>
+         <widget class="QLineEdit" name="outPath"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="outPathButton">
+          <property name="text">
+           <string>Select Path</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>General Options</string>
       </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>mpg</string>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="fileNameLayout">
+         <item>
+          <widget class="QLabel" name="nameLabel">
+           <property name="text">
+            <string>File Name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>50</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="nameInput">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="formatLayout">
+         <item>
+          <widget class="QLabel" name="formatLabel">
+           <property name="text">
+            <string>Output format</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="formatSelection">
+           <item>
+            <property name="text">
+             <string>avi</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mpg</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="qualityLayout">
+         <item>
+          <widget class="QLabel" name="qualityLabel">
+           <property name="text">
+            <string>Quality</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="qualitySelection">
+           <item>
+            <property name="text">
+             <string>No Change</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Highest</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>High</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Medium</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Low</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Lowest</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="optionsBottomSpace">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="buttonSpace">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="formatLabel">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>91</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Output format</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="nameInput">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>30</y>
-       <width>261</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="nameLabel">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>71</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>File Name</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="qualityLabel">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Quality</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="qualitySelection">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>110</y>
-       <width>111</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>No Change</string>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
       </property>
-     </item>
-     <item>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="runCommand">
       <property name="text">
-       <string>Highest</string>
+       <string>Convert Video</string>
       </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>High</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Medium</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Low</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Lowest</string>
-      </property>
-     </item>
-    </widget>
-   </widget>
-   <widget class="QPushButton" name="runCommand">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>320</y>
-      <width>381</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Convert Video</string>
-    </property>
-   </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
