@@ -54,5 +54,4 @@ void FFMpegWrapper::run() {
 	}
 
 	pclose(executedCommand);
-	free(executedCommand);
 }
