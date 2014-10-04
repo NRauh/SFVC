@@ -54,6 +54,16 @@ void MainWindow::on_inputSelectButton_clicked() {
 }
 
 
+/***
+ * When the text for the path changes, then it updates where ffmpeg will look
+ * for the file.
+***/
+void MainWindow::on_inputPath_textChanged(const QString &arg1) {
+	QFileInfo *fileInfo = new QFileInfo(arg1);
+	wrapper->inputPath = fileInfo->filePath();
+	delete fileInfo;
+}
+
 
 
 /***
@@ -71,13 +81,22 @@ void MainWindow::on_outPathButton_clicked() {
 
 
 /***
+ * When the text for the output path changes, it updates where ffmpeg will
+ * put the converted file at.
+***/
+void MainWindow::on_outPath_textChanged(const QString &arg1) {
+	wrapper->outputPath = arg1;
+}
+
+
+
+/***
  * When the text in the name input field is changed (person or computer),
  * then the file name is changed for the wrapper.
 ***/
 void MainWindow::on_nameInput_textChanged(const QString &arg1) {
 	wrapper->fileName = arg1;
 }
-
 
 
 
