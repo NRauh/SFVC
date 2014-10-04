@@ -16,11 +16,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 /***
  * Descontructor for MainWindow
- *
- * TODO: Memory management, obviously
 ***/
 MainWindow::~MainWindow() {
 	delete ui;
+	delete wrapper;
 }
 
 
@@ -50,6 +49,8 @@ void MainWindow::on_inputSelectButton_clicked() {
 	ui->nameInput->setText(fileInfo->baseName());
 	wrapper->inputPath = fileInfo->filePath();
 	wrapper->fileName = fileInfo->baseName();
+
+	delete fileInfo;
 }
 
 
