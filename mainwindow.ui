@@ -133,12 +133,62 @@
           <widget class="QComboBox" name="formatSelection">
            <item>
             <property name="text">
-             <string>avi</string>
+             <string>avi - AVI</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>mpg</string>
+             <string>drc - Dirac</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>flv - Flash Video</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>gif - GIF Animation</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mkv - Matroska</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mov - QuickTime</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mp4 - MPEG-4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mpg - MPEG</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ogg - Ogg Video</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rm - RealMedia</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>webm - WebM</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>wmv - Windows Media</string>
             </property>
            </item>
           </widget>
