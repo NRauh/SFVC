@@ -6,6 +6,10 @@
 /***
  * In the constructor, I'm giving the variables default values,
  * incase they don't change.
+ *
+ * And I'm setting the array of output formats to corrispond with the format selection.
+ *
+ * TODO: There's probably a better way to set the formats
 ***/
 FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 	inputPath = "";
@@ -35,7 +39,7 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
  * After command is made, a FILE variable is made called executedCommand, and
  * lineOutput is created as a char buffer.
  * executedCommand is set to popen() which takes a char* (hence the stuff with command)
- * and set to read.
+ * and set to read the output (2>&1 makes the output read stderr, which is where ffmpeg spits output).
  * The while loop uses fgets to run the command and also read the printed line
  *
  * TODO: Make a window that shows the output
@@ -48,7 +52,7 @@ void FFMpegWrapper::run() {
 	command.append(QString(" -qscale %1").arg(quality));
 	command.append(QString(" \"%1/%2.%3\"").arg(outputPath, fileName, fileType));
 
-	outputWindow.show();
+	//outputWindow.show();
 
 	FILE *executedCommand;
 	char lineOutput[2048];

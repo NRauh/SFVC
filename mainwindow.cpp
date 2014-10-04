@@ -81,14 +81,20 @@ void MainWindow::on_nameInput_textChanged(const QString &arg1) {
 
 
 
-/*** edited
- * When the combobox is changed, this function gives the text of the item.
- * Then wrapper.fileType is set to arg1 / selection.
+/***
+ * When the combobox is changed, this function gives the number of the selection.
+ * The filetype for the wrapper is set to the format at the index of the selection.
 ***/
 void MainWindow::on_formatSelection_currentIndexChanged(int index) {
 	wrapper->fileType = wrapper->formats[index];
 }
 
+
+
+/***
+ * The quality selection box has six values which get lower,
+ * the quality can be 1-31, so they each get worse by six.
+***/
 void MainWindow::on_qualitySelection_currentIndexChanged(int index) {
 	switch (index) {
 	case 0:
