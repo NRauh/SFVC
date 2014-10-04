@@ -18,6 +18,7 @@ public:
 
 	QString formats[9];
 
+	QString commandFrom;
 	QString inputPath;
 	QString outputPath;
 	QString fileType;

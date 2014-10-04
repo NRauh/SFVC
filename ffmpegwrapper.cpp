@@ -3,7 +3,7 @@
 
 
 
-/***
+/*** changed
  * In the constructor, I'm giving the variables default values,
  * incase they don't change.
  *
@@ -27,6 +27,14 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 	formats[6] = "mpg";
 	formats[7] = "rm";
 	formats[8] = "wmv";
+
+	if (system("ffmpeg -version") == 0) {
+		commandFrom = "ffmpeg";
+	} else if (system("./ffmpeg -version") == 0) {
+		commandFrom = "./ffmpeg";
+	} else {
+		qDebug() << "Not found";
+	}
 }
 
 
@@ -46,7 +54,7 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 ***/
 void FFMpegWrapper::run() {
 	QString command;
-	command = QString("./ffmpeg");
+	command = QString(commandFrom);
 
 	command.append(QString(" -i \"%1\"").arg(inputPath));
 	command.append(QString(" -qscale %1").arg(quality));
