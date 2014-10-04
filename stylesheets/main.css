@@ -1,0 +1,36 @@
+.navbar {
+	border-color: gray;
+	background-color: gray;
+}
+.navbar .navbar-brand {
+	color: black;
+}
+.navbar-default .navbar-nav>li>a {
+	color: black;
+}
+
+.intro:first-child {
+	margin-top: 80px;
+	margin-bottom: 95px;
+}
+.intro .media-body {
+	padding-left: 70px;
+}
+
+#about {
+	margin-top: 75px;
+	margin-bottom: 95px;
+	text-align: center;
+}
+
+#downloads {
+	margin-top: 75px;
+	margin-bottom: 95px;
+}
+
+.footer ul {
+	list-style: none;
+}
+.footer ul li {
+	display: inline;
+}
