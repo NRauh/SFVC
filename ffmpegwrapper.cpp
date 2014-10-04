@@ -3,13 +3,17 @@
 
 
 
-/*** changed
+/***
  * In the constructor, I'm giving the variables default values,
  * incase they don't change.
  *
  * And I'm setting the array of output formats to corrispond with the format selection.
  *
+ * The if statements are for checking if there's a global install of ffmpeg, and if not
+ * if there's a copy of ffmpeg next to sfvc, and it uses the first one found.
+ *
  * TODO: There's probably a better way to set the formats
+ * TODO: Alert if there's no copy of FFmpeg
 ***/
 FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
 	inputPath = "";
