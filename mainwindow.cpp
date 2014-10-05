@@ -5,11 +5,13 @@
 
 
 /***
- * In the constructor, UI is being setup, and wrapper is creating a new FFMpegWrapper
+ * In the constructor, UI is being setup, and wrapper is creating a new FFMpegWrapper,
+ * and hiding the progress bar.
 ***/
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	ui->setupUi(this);
 	wrapper = new FFMpegWrapper();
+	ui->progressBar->hide();
 }
 
 
@@ -25,11 +27,15 @@ MainWindow::~MainWindow() {
 
 
 /***
- * When the runCommand button is clicked, I'm running the start method for the wrapper.
+ * When the runCommand button is clicked, I'm  showing the progress bar,
+ * and running the start method for the wrapper.
  * start() creates a new thread and runs the wrapper's run command.
+ * When the wrapper emits it's finished signal, I'm hiding the progress bar again.
 ***/
 void MainWindow::on_runCommand_clicked() {
+	ui->progressBar->show();
 	wrapper->start(QThread::HighestPriority);
+	connect(wrapper, SIGNAL(finished()), ui->progressBar, SLOT(hide()));
 }
 
 
