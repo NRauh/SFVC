@@ -13,15 +13,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
 		mainwindow.cpp \
-	ffmpegwrapper.cpp \
-	commandoutputwindow.cpp
+	ffmpegwrapper.cpp
 
 HEADERS  += mainwindow.h \
-	ffmpegwrapper.h \
-	commandoutputwindow.h
+	ffmpegwrapper.h
 
-FORMS    += mainwindow.ui \
-	commandoutputwindow.ui
+FORMS    += mainwindow.ui
 
 QMAKE_CXXFLAGS+=-v
 

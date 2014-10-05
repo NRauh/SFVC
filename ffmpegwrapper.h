@@ -5,7 +5,6 @@
 #include <QString>
 #include <QDir>
 #include <QDebug>
-#include "commandoutputwindow.h"
 
 class FFMpegWrapper : public QThread {
 	Q_OBJECT
@@ -13,8 +12,6 @@ public:
 	FFMpegWrapper(QObject *parent = 0);
 
 	void run();
-
-	CommandOutputWindow outputWindow;
 
 	QString formats[9];
 

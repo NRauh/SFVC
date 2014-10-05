@@ -64,8 +64,6 @@ void FFMpegWrapper::run() {
 	command.append(QString(" -qscale %1").arg(quality));
 	command.append(QString(" \"%1/%2.%3\"").arg(outputPath, fileName, fileType));
 
-	//outputWindow.show();
-
 	FILE *executedCommand;
 	char lineOutput[2048];
 
@@ -75,8 +73,6 @@ void FFMpegWrapper::run() {
 
 	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand)) {
 		qDebug() << lineOutput;
-		// commented out because, the amount could crash the program.
-		//outputWindow.addToOutput(lineOutput);
 	}
 
 	pclose(executedCommand);
