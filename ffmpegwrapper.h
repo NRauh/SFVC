@@ -5,6 +5,7 @@
 #include <QString>
 #include <QDir>
 #include <QDebug>
+#include <stdio.h>
 
 class FFMpegWrapper : public QThread {
 	Q_OBJECT

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QDebug>
 #include "ffmpegwrapper.h"
 
 namespace Ui {
