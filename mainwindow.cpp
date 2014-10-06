@@ -28,16 +28,19 @@ MainWindow::~MainWindow() {
 
 /***
  * When the runCommand button is clicked, I'm  showing the progress bar & stop button,
- * and running the start method for the wrapper.
+ * and hiding the start button. Then run the start method for the wrapper.
  * start() creates a new thread and runs the wrapper's run command.
- * When the wrapper emits it's finished signal, I'm hiding the progress bar, & stop button.
+ * When the wrapper emits it's finished signal, I'm hiding the progress bar, & stop button,
+ * and showing the start button.
 ***/
 void MainWindow::on_runCommand_clicked() {
 	ui->progressBar->show();
 	ui->stopConvert->show();
+	ui->runCommand->hide();
 	wrapper->start(QThread::HighestPriority);
 	connect(wrapper, SIGNAL(finished()), ui->progressBar, SLOT(hide()));
 	connect(wrapper, SIGNAL(finished()), ui->stopConvert, SLOT(hide()));
+	connect(wrapper, SIGNAL(finished()), ui->runCommand, SLOT(show()));
 }
 
 
