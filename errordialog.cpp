@@ -9,6 +9,9 @@ ErrorDialog::~ErrorDialog() {
 	delete ui;
 }
 
+/***
+ * setErrorMessage provides a way to set the text of the error message
+***/
 void ErrorDialog::setErrorMessage(char *message) {
 	ui->errorMessage->setText(message);
 }
