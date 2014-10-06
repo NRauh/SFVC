@@ -6,6 +6,7 @@
 #include <QDir>
 #include <QDebug>
 #include <stdio.h>
+#include "errordialog.h"
 
 class FFMpegWrapper : public QThread {
 	Q_OBJECT
@@ -22,6 +23,10 @@ public:
 	QString fileType;
 	QString fileName;
 	int quality;
+
+private:
+	ErrorDialog errWindow;
+	void showErrWindow(char *message);
 };
 
 #endif // FFMPEGWRAPPER_H

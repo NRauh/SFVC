@@ -53,7 +53,12 @@ FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
  * and set to read the output (2>&1 makes the output read stderr, which is where ffmpeg spits output).
  * The while loop uses fgets to run the command and also read the printed line
  *
+ * In the while loop, I've put some if statements to check for errors.
+ *
  * TODO: Make a window that shows the output
+ * TODO: Make sure more errors are being caught
+ * TODO: Improve error messages
+ * TODO: Let people choose to overwrite the file
 ***/
 void FFMpegWrapper::run() {
 	QString command;
@@ -61,7 +66,7 @@ void FFMpegWrapper::run() {
 
 	command.append(QString(" -i \"%1\"").arg(inputPath));
 	command.append(QString(" -qscale %1").arg(quality));
-	command.append(QString(" \"%1/%2.%3\"").arg(outputPath, fileName, fileType));
+	command.append(QString(" -n \"%1/%2.%3\"").arg(outputPath, fileName, fileType));
 
 	FILE *executedCommand;
 	char lineOutput[2048];
@@ -72,7 +77,22 @@ void FFMpegWrapper::run() {
 
 	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand)) {
 		qDebug() << lineOutput;
+
+		if (strstr(lineOutput, "No such file or directory")) {
+			showErrWindow(lineOutput);
+		} else if (strstr(lineOutput, "already exists")) {
+			showErrWindow(lineOutput);
+		} else if (strstr(lineOutput, "Permission denied")) {
+			showErrWindow(lineOutput);
+		}
 	}
 
 	pclose(executedCommand);
+}
+
+
+
+void FFMpegWrapper::showErrWindow(char *message) {
+	errWindow.setErrorMessage(message);
+	errWindow.show();
 }
