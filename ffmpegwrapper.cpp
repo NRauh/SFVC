@@ -15,6 +15,7 @@
  * TODO: Alert if there's no copy of FFmpeg
 ***/
 FFMpegWrapper::FFMpegWrapper(QObject *parent) : QThread(parent) {
+	commandShouldRun = true;
 	inputPath = "";
 	outputPath = "/";
 	fileName = "SFVC-Video";
@@ -75,7 +76,7 @@ void FFMpegWrapper::run() {
 	executedCommand = popen(command.toStdString().c_str(), "r");
 
 
-	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand)) {
+	while (fgets(lineOutput, sizeof(lineOutput)-1, executedCommand) && commandShouldRun) {
 		qDebug() << lineOutput;
 
 		if (strstr(lineOutput, "No such file or directory")) {
@@ -88,6 +89,12 @@ void FFMpegWrapper::run() {
 	}
 
 	pclose(executedCommand);
+}
+
+
+
+void FFMpegWrapper::stopCommand() {
+	commandShouldRun = false;
 }
 
 

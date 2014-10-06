@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>412</height>
+    <height>428</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -246,20 +246,31 @@
      </widget>
     </item>
     <item>
-     <widget class="QProgressBar" name="progressBar">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="maximum">
-       <number>0</number>
-      </property>
-      <property name="value">
-       <number>-1</number>
-      </property>
-      <property name="textVisible">
-       <bool>false</bool>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="convertingGroup">
+      <item>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximum">
+         <number>0</number>
+        </property>
+        <property name="value">
+         <number>-1</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopConvert">
+        <property name="text">
+         <string>Stop</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

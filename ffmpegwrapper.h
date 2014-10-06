@@ -14,6 +14,7 @@ public:
 	FFMpegWrapper(QObject *parent = 0);
 
 	void run();
+	void stopCommand();
 
 	QString formats[9];
 
@@ -27,6 +28,7 @@ public:
 private:
 	ErrorDialog errWindow;
 	void showErrWindow(char *message);
+	bool commandShouldRun;
 };
 
 #endif // FFMPEGWRAPPER_H

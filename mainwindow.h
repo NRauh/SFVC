@@ -23,10 +23,13 @@ private slots:
 	void on_inputPath_textChanged(const QString &arg1);
 	void on_outPathButton_clicked();
 	void on_outPath_textChanged(const QString &arg1);
-	void on_runCommand_clicked();
+
 	void on_nameInput_textChanged(const QString &arg1);
 	void on_formatSelection_currentIndexChanged(int index);
 	void on_qualitySelection_currentIndexChanged(int index);
+
+	void on_runCommand_clicked();
+	void on_stopConvert_clicked();
 
 private:
 	Ui::MainWindow *ui;

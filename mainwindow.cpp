@@ -5,12 +5,13 @@
 
 /***
  * In the constructor, UI is being setup, and wrapper is creating a new FFMpegWrapper,
- * and hiding the progress bar.
+ * and hiding the progress bar & stop button.
 ***/
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	ui->setupUi(this);
 	wrapper = new FFMpegWrapper();
 	ui->progressBar->hide();
+	ui->stopConvert->hide();
 }
 
 
@@ -26,15 +27,26 @@ MainWindow::~MainWindow() {
 
 
 /***
- * When the runCommand button is clicked, I'm  showing the progress bar,
+ * When the runCommand button is clicked, I'm  showing the progress bar & stop button,
  * and running the start method for the wrapper.
  * start() creates a new thread and runs the wrapper's run command.
- * When the wrapper emits it's finished signal, I'm hiding the progress bar again.
+ * When the wrapper emits it's finished signal, I'm hiding the progress bar, & stop button.
 ***/
 void MainWindow::on_runCommand_clicked() {
 	ui->progressBar->show();
+	ui->stopConvert->show();
 	wrapper->start(QThread::HighestPriority);
 	connect(wrapper, SIGNAL(finished()), ui->progressBar, SLOT(hide()));
+	connect(wrapper, SIGNAL(finished()), ui->stopConvert, SLOT(hide()));
+}
+
+
+
+/***
+ * When the button is clicked it stops the while loop for the command.
+***/
+void MainWindow::on_stopConvert_clicked() {
+	wrapper->stopCommand();
 }
 
 
